@@ -1,5 +1,4 @@
-
-
+<!--
 <div *ngIf="isBalanceCorrect()" class="success">El balance es correcto !!</div>
 <div *ngIf="!isBalanceCorrect()" class="error">El balance es incorrecto !!</div>
 
@@ -20,6 +19,42 @@
     <label>CAPITAL: <input [(ngModel)]="capital"><button style="margin-left: 3px;" (click)="addCapital()">AGREGAR</button></label>
     <div class="data-container" *ngFor="let value of capitalValues">
       <div class="data-box">{{value}}</div>
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="isBalanceCorrect()" class="success">El balance es correcto !!</div>
+<div *ngIf="!isBalanceCorrect()" class="error">El balance es incorrecto !!</div>
+<br>
+<div class="container">
+  <div class="input-group">
+    <label>ACTIVOS:
+      <input [(ngModel)]="activeValue">
+      <input [(ngModel)]="activeDescription" placeholder="Descripción">
+      <button style="margin-left: 3px;" (click)="addActive()">AGREGAR</button>
+    </label>
+    <div class="data-container" *ngFor="let item of activeValues">
+      <div class="data-box">{{item.value}} | {{item.description}}</div>
+    </div>
+  </div>
+  <div class="input-group">
+    <label>PASIVOS:
+      <input [(ngModel)]="passiveValue">
+      <input [(ngModel)]="passiveDescription" placeholder="Descripción">
+      <button style="margin-left: 3px;"  (click)="addPassive()">AGREGAR</button>
+    </label>
+    <div class="data-container" *ngFor="let item of passiveValues">
+      <div class="data-box">{{item.value}} | {{item.description}}</div>
+    </div>
+  </div>
+  <div class="input-group">
+    <label>CAPITAL:
+      <input [(ngModel)]="capitalValue">
+      <input [(ngModel)]="capitalDescription" placeholder="Descripción">
+      <button style="margin-left: 3px;" (click)="addCapital()">AGREGAR</button>
+    </label>
+    <div class="data-container" *ngFor="let item of capitalValues">
+      <div class="data-box">{{item.value}} | {{item.description}}</div>
     </div>
   </div>
 </div>
